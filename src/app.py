@@ -7,6 +7,14 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
+@app.route('/health')
+def health():
+    """
+    :return: 200 with message health
+    """
+    return 'Health!'
+
+
 @app.route('/')
 @app.route('/<name>')
 def hello(name=None):
